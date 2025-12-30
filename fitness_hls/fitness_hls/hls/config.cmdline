@@ -1,0 +1,3 @@
+relativeroot=D:/FPGA/fitness_function/fitness_hls
+original_argv=--mode hls --csim --config D:\FPGA\fitness_function\fitness_hls\hls_config.cfg --work_dir fitness_hls 
+

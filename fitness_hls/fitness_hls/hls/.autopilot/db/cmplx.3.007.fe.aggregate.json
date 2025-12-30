@@ -1,0 +1,18 @@
+{
+  "0": {
+    "basicblocks": 6824,
+    "calls": "",
+    "file": "fitness_kernel.cpp",
+    "fileloc": 10,
+    "instructions": 44751,
+    "loads": {
+      "G": 320,
+      "T": 1
+    },
+    "name": "fitness_kernel",
+    "stores": {
+      "G": 10
+    },
+    "total_instructions": 44751
+  }
+}

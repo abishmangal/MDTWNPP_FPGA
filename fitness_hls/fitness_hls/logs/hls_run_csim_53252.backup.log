@@ -1,0 +1,36 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir D:/FPGA/fitness_function/fitness_hls/fitness_hls 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+WARNING: [HLS 200-2001] file not found 'fitness_function_top.cppfitness_function_top.cpp' see [hls] from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying ini 'syn.file=D:/FPGA/Fitness_A/Fitness_A/Fitness_Accelerator/fitness_kernel_hls.cpp' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding design file 'D:/FPGA/Fitness_A/Fitness_A/Fitness_Accelerator/fitness_kernel_hls.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=fitness_function_top.cppfitness_function_top.cpp' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(10)
+WARNING: [HLS 200-40] Cannot find design file 'fitness_function_top.cppfitness_function_top.cpp'
+INFO: [HLS 200-1465] Applying ini 'syn.file=fitness_kernel_top.cpp' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding design file 'D:/FPGA/fitness_function/fitness_hls/fitness_kernel_top.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=fitness_kernel.h' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(12)
+INFO: [HLS 200-10] Adding design file 'D:/FPGA/fitness_function/fitness_hls/fitness_kernel.h' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=D:/FPGA/Fitness_A/Fitness_A/Fitness_Accelerator/tb_fitness.cpp' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding test bench file 'D:/FPGA/Fitness_A/Fitness_A/Fitness_Accelerator/tb_fitness.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=fitness_kernel' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(8)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xczu7ev-ffvc1156-2-e' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(5)
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../../../Fitness_A/Fitness_A/Fitness_Accelerator/fitness_kernel_hls.cpp in debug mode
+csim.mk:100: recipe for target 'obj/fitness_kernel_hls.o' failed
+../../../../../../Fitness_A/Fitness_A/Fitness_Accelerator/fitness_kernel_hls.cpp:2:10: fatal error: 'fitness_kernel.h' file not found
+#include "fitness_kernel.h"
+         ^~~~~~~~~~~~~~~~~~
+1 error generated.
+make: *** [obj/fitness_kernel_hls.o] Error 1
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+ERROR: 4
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 2 seconds. Total elapsed time: 11.063 seconds; peak allocated memory: 163.055 MB.

@@ -1,0 +1,31 @@
+<pragmas>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="fitness_kernel.cpp" line="29" pragmaType="dataflow" parentfunction="fitness_kernel" disable_start_propagation="0"/>
+<pragma file="fitness_kernel.cpp" line="42" pragmaType="pipeline" parentfunction="fitness_kernel" off="0" ii="1" rewind="0" style=""/>
+<pragma file="fitness_kernel.cpp" line="49" pragmaType="unroll" parentfunction="fitness_kernel" factor="-1" skip_exit_check="0"/>
+<pragma file="fitness_kernel.cpp" line="61" pragmaType="loop_tripcount" parentfunction="fitness_kernel" min="1" max="1000" avg="500"/>
+<pragma file="fitness_kernel.cpp" line="70" pragmaType="unroll" parentfunction="fitness_kernel" factor="-1" skip_exit_check="0"/>
+<pragma file="fitness_kernel.cpp" line="80" pragmaType="pipeline" parentfunction="fitness_kernel" off="0" ii="1" rewind="0" style=""/>
+<pragma file="fitness_kernel.cpp" line="127" pragmaType="unroll" parentfunction="fitness_kernel" factor="5" skip_exit_check="0"/>
+<pragma file="fitness_kernel.cpp" line="126" pragmaType="pipeline" parentfunction="fitness_kernel" off="0" ii="1" rewind="0" style=""/>
+<pragma file="fitness_kernel.cpp" line="87" pragmaType="unroll" parentfunction="fitness_kernel" factor="-1" skip_exit_check="0"/>
+<pragma file="fitness_kernel.cpp" line="98" pragmaType="unroll" parentfunction="fitness_kernel" factor="10" skip_exit_check="0"/>
+<pragma file="fitness_kernel.cpp" line="108" pragmaType="unroll" parentfunction="fitness_kernel" factor="-1" skip_exit_check="0"/>
+<pragma file="fitness_kernel.cpp" line="20" pragmaType="interface" parentfunction="fitness_kernel" mode="axis" port="chromosome_stream" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="fitness_kernel.cpp" line="21" pragmaType="interface" parentfunction="fitness_kernel" mode="axis" port="result_stream" register="1" register_mode="both" name="" depth="-1"/>
+<pragma file="fitness_kernel.cpp" line="22" pragmaType="interface" parentfunction="fitness_kernel" mode="m_axi" port="vectors_in" bundle="gmem_vec" offset="slave" name="" depth="100000" num_read_outstanding="-1" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="fitness_kernel.cpp" line="23" pragmaType="interface" parentfunction="fitness_kernel" mode="s_axilite" port="chromo_len" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="fitness_kernel.cpp" line="24" pragmaType="interface" parentfunction="fitness_kernel" mode="s_axilite" port="dim" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="fitness_kernel.cpp" line="25" pragmaType="interface" parentfunction="fitness_kernel" mode="s_axilite" port="num_bats" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="fitness_kernel.cpp" line="26" pragmaType="interface" parentfunction="fitness_kernel" mode="s_axilite" port="mode" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="fitness_kernel.cpp" line="27" pragmaType="interface" parentfunction="fitness_kernel" mode="s_axilite" port="" bundle="control" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="fitness_kernel.cpp" line="33" pragmaType="array_partition" parentfunction="fitness_kernel" dim="1" factor="10" mode="cyclic" dynamic="0" variable="_ZZ14fitness_kernelE18local_vector_cache"/>
+<pragma file="fitness_kernel.cpp" line="34" pragmaType="bind_storage" parentfunction="fitness_kernel" op="666" impl="18" latency="-1" variable="_ZZ14fitness_kernelE18local_vector_cache"/>
+<pragma file="fitness_kernel.cpp" line="65" pragmaType="array_partition" parentfunction="fitness_kernel" dim="1" factor="0" mode="complete" dynamic="0" variable="sumA"/>
+<pragma file="fitness_kernel.cpp" line="66" pragmaType="array_partition" parentfunction="fitness_kernel" dim="1" factor="0" mode="complete" dynamic="0" variable="sumB"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="write" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<32, false>::ap_bit_ref(ap_int_base<32, false>*, int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="read" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_int_base<32, false>::operator[](int)" off="0" region="0" recursive="0"/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_bit_ref<32, false>::operator bool() const" off="0" region="0" recursive="0"/>
+</pragmas>

@@ -1,0 +1,3255 @@
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 48, Column: 30 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_48_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 86, Column: 31 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        process_bits
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 18, Column: 0 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        process_bits
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:86:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          fitness_kernel
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaPartiallyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 18, Column: 0 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        compute_distance
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:125:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          fitness_kernel
+  - String:          ''' partially '
+  - String:          ''
+  - String:          'with a factor of '
+  - Factor:          '5'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_fitness_kernel_ir
+Args:            
+  - Callee:          fitness_kernel
+    DebugLoc:        { File: fitness_kernel.cpp, Line: 18, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_fitness_kernel_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: fitness_kernel.cpp, Line: 32, Column: 0 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZZ14fitness_kernelE18local_vector_cache
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '10'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: fitness_kernel.cpp, Line: 63, Column: 8 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          sumA
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: fitness_kernel.cpp, Line: 64, Column: 19 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          sumB
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: fitness_kernel.cpp, Line: 48, Column: 30 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgepseq
+  - ArrayName:       vectors_in
+  - String:          ' '
+  - BundleName:      gmem_vec
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_48_1
+  - String:          ' '
+  - LoopLoc:         'fitness_kernel.cpp:48:30'
+  - String:          ' '
+  - Function:        fitness_kernel
+    DebugLoc:        { File: fitness_kernel.cpp, Line: 18, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: fitness_kernel.cpp, Line: 50, Column: 26 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.7
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: fitness_kernel.cpp, Line: 125, Column: 31 }
+Function:        fitness_kernel
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        compute_distance
+  - String:          ' '
+  - LoopLoc:         'fitness_kernel.cpp:125:31'
+  - String:          ' '
+  - Function:        fitness_kernel
+    DebugLoc:        { File: fitness_kernel.cpp, Line: 18, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            AccessInCondBranch
+DebugLoc:        { File: fitness_kernel.cpp, Line: 48, Column: 30 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Access '
+  - Access:          call
+    DebugLoc:        { File: fitness_kernel.cpp, Line: 48, Column: 30 }
+  - String:          ' is in the conditional branch'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: fitness_kernel.cpp, Line: 48, Column: 30 }
+  - OrigDirection:   read
+  - OrigID:          scevgepseq
+  - ArrayName:       vectors_in
+  - String:          ' '
+  - BundleName:      gmem_vec
+  - String:          ' '
+  - LoopName:        load_cache
+  - String:          ' '
+  - LoopLoc:         'fitness_kernel.cpp:41:21'
+  - String:          ' '
+  - Function:        fitness_kernel
+    DebugLoc:        { File: fitness_kernel.cpp, Line: 18, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: fitness_kernel.cpp, Line: 48, Column: 30 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            float
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: fitness_kernel.cpp, Line: 48, Column: 30 }
+  - OrigDirection:   read
+  - OrigID:          scevgepseq
+  - ArrayName:       vectors_in
+  - String:          ' '
+  - BundleName:      gmem_vec
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_48_1
+  - String:          ' '
+  - LoopLoc:         'fitness_kernel.cpp:48:30'
+  - String:          ' '
+  - Function:        fitness_kernel
+    DebugLoc:        { File: fitness_kernel.cpp, Line: 18, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 48, Column: 30 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_48_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        init_sums
+  - String:          '> at '
+  - LoopLoc:         'fitness_kernel.cpp:69:13'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 48, Column: 30 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_48_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: fitness_kernel.cpp, Line: 48, Column: 30 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem_vec
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_48_1
+  - String:          ' '
+  - LoopLoc:         'fitness_kernel.cpp:48:30'
+  - String:          ' '
+  - Function:        fitness_kernel
+    DebugLoc:        { File: fitness_kernel.cpp, Line: 18, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: fitness_kernel.cpp, Line: 48, Column: 30 }
+Function:        fitness_kernel
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_48_1
+  - String:          '''('
+  - LoopLoc:         'fitness_kernel.cpp:48:30'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem_vec
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 48, Column: 30 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_48_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        accumulate
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 48, Column: 30 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_48_1
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:48:30'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 69, Column: 13 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        init_sums
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:69:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 97, Column: 37 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        accumulate
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:97:37'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: fitness_kernel.cpp, Line: 107, Column: 47 }
+Function:        Block_entry_proc
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_107_2
+  - String:          ''' ('
+  - LoopLoc:         'fitness_kernel.cpp:107:47'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          Block_entry_proc
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: fitness_kernel.cpp, Line: 37, Column: 6 }
+Function:        fitness_kernel
+Args:            
+  - Callee:          Block_entry_proc
+    DebugLoc:        { File: fitness_kernel.cpp, Line: 0, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          fitness_kernel
+    DebugLoc:        { File: fitness_kernel.cpp, Line: 18, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...

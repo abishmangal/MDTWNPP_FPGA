@@ -1,0 +1,736 @@
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:2386:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:2386:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:2400:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:2400:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:2414:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:2414:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:4048:7: warning: Added loop label VITIS_LOOP_1248_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1248_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:4048:7: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12795:72: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_cos_K0 type=ROM_1P impl=LUTRAM
+                                                                       ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12796:72: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_cos_K1 type=ROM_1P impl=LUTRAM
+                                                                       ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12797:72: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_cos_K2 type=ROM_1P impl=LUTRAM
+                                                                       ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12798:72: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_cos_K3 type=ROM_1P impl=LUTRAM
+                                                                       ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12799:72: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_cos_K4 type=ROM_1P impl=LUTRAM
+                                                                       ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12829:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::cos_K0 type=ROM_1P impl=LUTRAM
+                                                                   ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12830:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::cos_K1 type=ROM_1P impl=LUTRAM
+                                                                   ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12831:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::cos_K2 type=ROM_1P impl=LUTRAM
+                                                                   ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12832:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::cos_K3 type=ROM_1P impl=LUTRAM
+                                                                   ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12833:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::cos_K4 type=ROM_1P impl=LUTRAM
+                                                                   ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12834:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_K0 type=ROM_1P impl=LUTRAM
+                                                                   ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12835:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_K1 type=ROM_1P impl=LUTRAM
+                                                                   ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12836:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_K2 type=ROM_1P impl=LUTRAM
+                                                                   ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12837:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_K3 type=ROM_1P impl=LUTRAM
+                                                                   ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12838:68: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=fourth_order_double::sin_K4 type=ROM_1P impl=LUTRAM
+                                                                   ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12888:71: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_cos_K0 type=ROM_1P impl=LUTRAM
+                                                                      ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12889:71: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_cos_K1 type=ROM_1P impl=LUTRAM
+                                                                      ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12890:71: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_cos_K2 type=ROM_1P impl=LUTRAM
+                                                                      ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12917:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::cos_K0 type=ROM_1P impl=LUTRAM
+                                                                  ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12918:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::cos_K1 type=ROM_1P impl=LUTRAM
+                                                                  ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12919:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::cos_K2 type=ROM_1P impl=LUTRAM
+                                                                  ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12920:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_K0 type=ROM_1P impl=LUTRAM
+                                                                  ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12921:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_K1 type=ROM_1P impl=LUTRAM
+                                                                  ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12922:67: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=second_order_float::sin_K2 type=ROM_1P impl=LUTRAM
+                                                                  ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12958:73: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=first_order_fixed_16::sin_cos_K0 type=ROM_1P impl=LUTRAM
+                                                                        ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:12959:73: error: Invalid Directive: for current device, ROM_1P + LUTRAM is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=first_order_fixed_16::sin_cos_K1 type=ROM_1P impl=LUTRAM
+                                                                        ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13233:5: warning: Added loop label VITIS_LOOP_61_1:   [xilinx-label-all-loops]
+    for (int n=0; n<Nmax; n++){
+    ^~~
+    VITIS_LOOP_61_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13233:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13279:5: warning: Added loop label VITIS_LOOP_117_1:   [xilinx-label-all-loops]
+    for (int n=0; n<Nmax; n++){
+    ^~~
+    VITIS_LOOP_117_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13279:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13442:9: warning: Added loop label VITIS_LOOP_289_1:   [xilinx-label-all-loops]
+        for(int i=0;i<W-1;i++){
+        ^~~
+        VITIS_LOOP_289_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13442:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13594:9: warning: Added loop label VITIS_LOOP_449_1:   [xilinx-label-all-loops]
+        for(int i=0;i<W-1;i++){
+        ^~~
+        VITIS_LOOP_449_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13594:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13774:5: warning: Added loop label VITIS_LOOP_629_1:   [xilinx-label-all-loops]
+    for(int i=0;i<W+1;i++){
+    ^~~
+    VITIS_LOOP_629_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13774:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13778:5: warning: Added loop label VITIS_LOOP_633_2:   [xilinx-label-all-loops]
+    for(int i=0;i<W+1;i++){
+    ^~~
+    VITIS_LOOP_633_2: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13778:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13888:5: warning: Added loop label VITIS_LOOP_743_1:   [xilinx-label-all-loops]
+    for (int n=0; n<Nmax; n++){
+    ^~~
+    VITIS_LOOP_743_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13888:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13978:7: warning: Added loop label VITIS_LOOP_840_1:   [xilinx-label-all-loops]
+      for(int i=0;i<W-1;i++){
+      ^~~
+      VITIS_LOOP_840_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13978:7: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13997:7: warning: Added loop label VITIS_LOOP_859_2:   [xilinx-label-all-loops]
+      for(int i=0;i<W-1;i++){
+      ^~~
+      VITIS_LOOP_859_2: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:13997:7: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14287:5: warning: Added loop label VITIS_LOOP_1173_1:   [xilinx-label-all-loops]
+    for(int i=0; i<Nmax; i++) {
+    ^~~
+    VITIS_LOOP_1173_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14287:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14370:5: warning: Added loop label VITIS_LOOP_1256_1:   [xilinx-label-all-loops]
+    for(int i=0; i<Nmax; i++) {
+    ^~~
+    VITIS_LOOP_1256_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14370:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14776:13: warning: Added loop label VITIS_LOOP_68_1:   [xilinx-label-all-loops]
+            for (int j = 3; j >= I_+1; j--) {
+            ^~~
+            VITIS_LOOP_68_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14776:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14782:17: warning: Added loop label VITIS_LOOP_74_2:   [xilinx-label-all-loops]
+                for (int j = 3; j >= I_+1; j--){
+                ^~~
+                VITIS_LOOP_74_2: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14782:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14786:17: warning: Added loop label VITIS_LOOP_78_3:   [xilinx-label-all-loops]
+                for (int j = I_; j >= 0; j--){
+                ^~~
+                VITIS_LOOP_78_3: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14786:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14834:13: warning: Added loop label VITIS_LOOP_145_4:   [xilinx-label-all-loops]
+            for (int j = 9; j >= I_+4; j--) {
+            ^~~
+            VITIS_LOOP_145_4: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14834:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14840:17: warning: Added loop label VITIS_LOOP_151_5:   [xilinx-label-all-loops]
+                for (int j = 9; j >= I_+4; j--){
+                ^~~
+                VITIS_LOOP_151_5: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14840:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14844:17: warning: Added loop label VITIS_LOOP_155_6:   [xilinx-label-all-loops]
+                for (int j = I_+3; j >= 0; j--){
+                ^~~
+                VITIS_LOOP_155_6: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14844:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14859:9: warning: Added loop label VITIS_LOOP_170_7:   [xilinx-label-all-loops]
+        for (int j = 14; j < 22; j++){
+        ^~~
+        VITIS_LOOP_170_7: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14859:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14867:17: warning: Added loop label VITIS_LOOP_178_8:   [xilinx-label-all-loops]
+                for (int j = 0; j < 22; j++){
+                ^~~
+                VITIS_LOOP_178_8: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14867:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14932:13: warning: Added loop label VITIS_LOOP_243_9:   [xilinx-label-all-loops]
+            for (int j = 21; j >= I_+10; j--) {
+            ^~~
+            VITIS_LOOP_243_9: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14932:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14938:17: warning: Added loop label VITIS_LOOP_249_10:   [xilinx-label-all-loops]
+                for (int j = 21; j >= I_+10; j--) {
+                ^~~
+                VITIS_LOOP_249_10: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14938:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14942:17: warning: Added loop label VITIS_LOOP_253_11:   [xilinx-label-all-loops]
+                for (int j = I_+9; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_253_11: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14942:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14957:9: warning: Added loop label VITIS_LOOP_268_12:   [xilinx-label-all-loops]
+        for (int j = 27; j < 46; j++){
+        ^~~
+        VITIS_LOOP_268_12: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14957:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14965:17: warning: Added loop label VITIS_LOOP_276_13:   [xilinx-label-all-loops]
+                for (int j = 0; j < 46; j++) {
+                ^~~
+                VITIS_LOOP_276_13: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:14965:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15194:13: warning: Added loop label VITIS_LOOP_505_14:   [xilinx-label-all-loops]
+            for (int j = 45; j >= I_+22; j--) {
+            ^~~
+            VITIS_LOOP_505_14: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15194:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15200:17: warning: Added loop label VITIS_LOOP_511_15:   [xilinx-label-all-loops]
+                for (int j = 45; j >= I_+22; j--){
+                ^~~
+                VITIS_LOOP_511_15: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15200:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15204:17: warning: Added loop label VITIS_LOOP_515_16:   [xilinx-label-all-loops]
+                for (int j = I_+21; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_515_16: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15204:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15214:9: warning: Added loop label VITIS_LOOP_525_17:   [xilinx-label-all-loops]
+        for (int j = 32-F_; j < 32+I_; j++){
+        ^~~
+        VITIS_LOOP_525_17: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15214:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15218:9: warning: Added loop label VITIS_LOOP_529_18:   [xilinx-label-all-loops]
+        for (int j = 32+I_; j <= 64; j++){
+        ^~~
+        VITIS_LOOP_529_18: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15218:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15228:9: warning: Added loop label VITIS_LOOP_539_19:   [xilinx-label-all-loops]
+        for (int j = 37; j < 64; j++) {
+        ^~~
+        VITIS_LOOP_539_19: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15228:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15236:17: warning: Added loop label VITIS_LOOP_547_20:   [xilinx-label-all-loops]
+                for (int j = 0; j < 64; j++){
+                ^~~
+                VITIS_LOOP_547_20: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15236:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15597:13: warning: Added loop label VITIS_LOOP_908_21:   [xilinx-label-all-loops]
+            for (int j = 63; j >= I_+31; j--) {
+            ^~~
+            VITIS_LOOP_908_21: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15597:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15603:17: warning: Added loop label VITIS_LOOP_914_22:   [xilinx-label-all-loops]
+                for (int j = 63; j >= I_+31; j--) {
+                ^~~
+                VITIS_LOOP_914_22: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15603:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15607:17: warning: Added loop label VITIS_LOOP_918_23:   [xilinx-label-all-loops]
+                for (int j = I_+30; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_918_23: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15607:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15723:13: warning: Added loop label VITIS_LOOP_1034_1:   [xilinx-label-all-loops]
+            for (int j = 4; j >= I_+1; j--) {
+            ^~~
+            VITIS_LOOP_1034_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15723:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15729:17: warning: Added loop label VITIS_LOOP_1040_2:   [xilinx-label-all-loops]
+                for (int j = 4; j >= I_+1; j--) {
+                ^~~
+                VITIS_LOOP_1040_2: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15729:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15733:17: warning: Added loop label VITIS_LOOP_1044_3:   [xilinx-label-all-loops]
+                for (int j = I_; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_1044_3: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15733:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15820:13: warning: Added loop label VITIS_LOOP_1131_4:   [xilinx-label-all-loops]
+            for (int j = 10; j >= I_+4; j--) {
+            ^~~
+            VITIS_LOOP_1131_4: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15820:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15826:17: warning: Added loop label VITIS_LOOP_1137_5:   [xilinx-label-all-loops]
+                for (int j = 10; j >= I_+4; j--) {
+                ^~~
+                VITIS_LOOP_1137_5: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15826:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15830:17: warning: Added loop label VITIS_LOOP_1141_6:   [xilinx-label-all-loops]
+                for (int j = I_+3; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_1141_6: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15830:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15849:9: warning: Added loop label VITIS_LOOP_1160_7:   [xilinx-label-all-loops]
+        for (int j = wf+3; j < w-1; j++) {
+        ^~~
+        VITIS_LOOP_1160_7: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15849:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15856:17: warning: Added loop label VITIS_LOOP_1167_8:   [xilinx-label-all-loops]
+                for (int j = 0; j < 22; j++) {
+                ^~~
+                VITIS_LOOP_1167_8: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15856:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15972:13: warning: Added loop label VITIS_LOOP_1283_9:   [xilinx-label-all-loops]
+            for (int j = 22; j >= I_+10; j--) {
+            ^~~
+            VITIS_LOOP_1283_9: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15972:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15978:17: warning: Added loop label VITIS_LOOP_1289_10:   [xilinx-label-all-loops]
+                for (int j = 22; j >= I_+10; j--){
+                ^~~
+                VITIS_LOOP_1289_10: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15978:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15982:17: warning: Added loop label VITIS_LOOP_1293_11:   [xilinx-label-all-loops]
+                for (int j = I_+9; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_1293_11: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:15982:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16002:9: warning: Added loop label VITIS_LOOP_1313_12:   [xilinx-label-all-loops]
+        for (int j = wf+4; j < w-1; j++){
+        ^~~
+        VITIS_LOOP_1313_12: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16002:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16009:17: warning: Added loop label VITIS_LOOP_1320_13:   [xilinx-label-all-loops]
+                for (int j = 0; j < 46; j++) {
+                ^~~
+                VITIS_LOOP_1320_13: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16009:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16271:13: warning: Added loop label VITIS_LOOP_1582_14:   [xilinx-label-all-loops]
+            for (int j = 46; j >= I_+22; j--) {
+            ^~~
+            VITIS_LOOP_1582_14: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16271:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16277:17: warning: Added loop label VITIS_LOOP_1588_15:   [xilinx-label-all-loops]
+                for (int j = 46; j >= I_+22; j--) {
+                ^~~
+                VITIS_LOOP_1588_15: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16277:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16281:17: warning: Added loop label VITIS_LOOP_1592_16:   [xilinx-label-all-loops]
+                for (int j = I_+21; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_1592_16: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16281:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16305:9: warning: Added loop label VITIS_LOOP_1616_17:   [xilinx-label-all-loops]
+        for (int j = wf+5; j < w-1; j++){
+        ^~~
+        VITIS_LOOP_1616_17: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16305:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16312:17: warning: Added loop label VITIS_LOOP_1623_18:   [xilinx-label-all-loops]
+                for (int j = 0; j < 64; j++) {
+                ^~~
+                VITIS_LOOP_1623_18: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16312:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16742:13: warning: Added loop label VITIS_LOOP_2053_19:   [xilinx-label-all-loops]
+            for (int j = 64; j >= I_+31; j--) {
+            ^~~
+            VITIS_LOOP_2053_19: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16742:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16748:17: warning: Added loop label VITIS_LOOP_2059_20:   [xilinx-label-all-loops]
+                for (int j = 64; j >= I_+31; j--) {
+                ^~~
+                VITIS_LOOP_2059_20: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16748:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16752:17: warning: Added loop label VITIS_LOOP_2063_21:   [xilinx-label-all-loops]
+                for (int j = I_+30; j >= 0; j--) {
+                ^~~
+                VITIS_LOOP_2063_21: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16752:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16882:13: warning: Added loop label VITIS_LOOP_2193_1:   [xilinx-label-all-loops]
+            for(int j=3; j>=I+1; j--) {
+            ^~~
+            VITIS_LOOP_2193_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16882:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16889:17: warning: Added loop label VITIS_LOOP_2200_2:   [xilinx-label-all-loops]
+                for(int j=3; j>=I+1; j--) {
+                ^~~
+                VITIS_LOOP_2200_2: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16889:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16893:17: warning: Added loop label VITIS_LOOP_2204_3:   [xilinx-label-all-loops]
+                for(int j=I; j>=0; j--) {
+                ^~~
+                VITIS_LOOP_2204_3: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16893:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16940:13: warning: Added loop label VITIS_LOOP_2251_4:   [xilinx-label-all-loops]
+            for(int j=7; j>=3+I; j--) {
+            ^~~
+            VITIS_LOOP_2251_4: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16940:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16947:17: warning: Added loop label VITIS_LOOP_2258_5:   [xilinx-label-all-loops]
+                for(int j=7; j>=3+I; j--) {
+                ^~~
+                VITIS_LOOP_2258_5: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16947:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16951:17: warning: Added loop label VITIS_LOOP_2262_6:   [xilinx-label-all-loops]
+                for(int j=I+2; j>=0; j--) {
+                ^~~
+                VITIS_LOOP_2262_6: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16951:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16969:9: warning: Added loop label VITIS_LOOP_2280_7:   [xilinx-label-all-loops]
+        for(int j=11; j<16; j++) {
+        ^~~
+        VITIS_LOOP_2280_7: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:16969:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17024:13: warning: Added loop label VITIS_LOOP_2335_8:   [xilinx-label-all-loops]
+            for(int j=15; j>=7+I; j--) {
+            ^~~
+            VITIS_LOOP_2335_8: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17024:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17031:17: warning: Added loop label VITIS_LOOP_2342_9:   [xilinx-label-all-loops]
+                for(int j=15; j>=7+I; j--) {
+                ^~~
+                VITIS_LOOP_2342_9: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17031:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17035:17: warning: Added loop label VITIS_LOOP_2346_10:   [xilinx-label-all-loops]
+                for(int j=6+I; j>=0; j--) {
+                ^~~
+                VITIS_LOOP_2346_10: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17035:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17053:9: warning: Added loop label VITIS_LOOP_2364_11:   [xilinx-label-all-loops]
+        for(int j=20; j<32; j++) {
+        ^~~
+        VITIS_LOOP_2364_11: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17053:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17142:13: warning: Added loop label VITIS_LOOP_2453_12:   [xilinx-label-all-loops]
+            for(int j=31; j>=I+15; j--) {
+            ^~~
+            VITIS_LOOP_2453_12: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17142:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17149:17: warning: Added loop label VITIS_LOOP_2460_13:   [xilinx-label-all-loops]
+                for(int j=31; j>=I+15; j--) {
+                ^~~
+                VITIS_LOOP_2460_13: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17149:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17153:17: warning: Added loop label VITIS_LOOP_2464_14:   [xilinx-label-all-loops]
+                for(int j=I+14; j>=0; j--) {
+                ^~~
+                VITIS_LOOP_2464_14: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17153:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17163:9: warning: Added loop label VITIS_LOOP_2474_15:   [xilinx-label-all-loops]
+        for(int j=32-F; j<32+I; j++) {
+        ^~~
+        VITIS_LOOP_2474_15: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17163:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17167:9: warning: Added loop label VITIS_LOOP_2478_16:   [xilinx-label-all-loops]
+        for(int j=32+I; j<=64; j++) {
+        ^~~
+        VITIS_LOOP_2478_16: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17167:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17178:9: warning: Added loop label VITIS_LOOP_2489_17:   [xilinx-label-all-loops]
+        for(int j=37; j<64; j++) {
+        ^~~
+        VITIS_LOOP_2489_17: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17178:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17186:17: warning: Added loop label VITIS_LOOP_2497_18:   [xilinx-label-all-loops]
+                for(int j=0; j<64; j++) {
+                ^~~
+                VITIS_LOOP_2497_18: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17186:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17511:13: warning: Added loop label VITIS_LOOP_2822_19:   [xilinx-label-all-loops]
+            for(int j=63; j>=I+31; j--) {
+            ^~~
+            VITIS_LOOP_2822_19: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17511:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17518:17: warning: Added loop label VITIS_LOOP_2829_20:   [xilinx-label-all-loops]
+                for(int j=63; j>=I+31; j--) {
+                ^~~
+                VITIS_LOOP_2829_20: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17518:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17522:17: warning: Added loop label VITIS_LOOP_2833_21:   [xilinx-label-all-loops]
+                for(int j=I+30; j>=0; j--) {
+                ^~~
+                VITIS_LOOP_2833_21: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17522:17: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17610:4: warning: Added loop label VITIS_LOOP_2921_1:   [xilinx-label-all-loops]
+   for(int j = 5; j>=I_+2; j--) {
+   ^~~
+   VITIS_LOOP_2921_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17610:4: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17617:5: warning: Added loop label VITIS_LOOP_2928_2:   [xilinx-label-all-loops]
+    for(int j = 5; j>=I_+2; j--) {
+    ^~~
+    VITIS_LOOP_2928_2: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17617:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17621:5: warning: Added loop label VITIS_LOOP_2932_3:   [xilinx-label-all-loops]
+    for(int j = I_+1; j>=0; j--) {
+    ^~~
+    VITIS_LOOP_2932_3: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17621:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17636:3: warning: Added loop label VITIS_LOOP_2947_4:   [xilinx-label-all-loops]
+  for(int j = 11; j >=7; j--) {
+  ^~~
+  VITIS_LOOP_2947_4: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17636:3: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17668:4: warning: Added loop label VITIS_LOOP_2979_5:   [xilinx-label-all-loops]
+   for(int j = 11; j >= I_+5; j--) {
+   ^~~
+   VITIS_LOOP_2979_5: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17668:4: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17675:5: warning: Added loop label VITIS_LOOP_2986_6:   [xilinx-label-all-loops]
+    for(int j = 11; j>= I_+5; j--) {
+    ^~~
+    VITIS_LOOP_2986_6: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17675:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17679:5: warning: Added loop label VITIS_LOOP_2990_7:   [xilinx-label-all-loops]
+    for(int j = I_+4; j>=0; j--) {
+    ^~~
+    VITIS_LOOP_2990_7: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17679:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17694:3: warning: Added loop label VITIS_LOOP_3005_8:   [xilinx-label-all-loops]
+  for(int j = 25; j>=15; j--) {
+  ^~~
+  VITIS_LOOP_3005_8: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17694:3: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17744:4: warning: Added loop label VITIS_LOOP_3055_9:   [xilinx-label-all-loops]
+   for(int j = 25; j>= I_+12; j--) {
+   ^~~
+   VITIS_LOOP_3055_9: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17744:4: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17751:5: warning: Added loop label VITIS_LOOP_3062_10:   [xilinx-label-all-loops]
+    for(int j = 25; j>=I_+12; j--) {
+    ^~~
+    VITIS_LOOP_3062_10: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17751:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17755:5: warning: Added loop label VITIS_LOOP_3066_11:   [xilinx-label-all-loops]
+    for(int j = I_+11; j>=0; j--) {
+    ^~~
+    VITIS_LOOP_3066_11: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17755:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17770:3: warning: Added loop label VITIS_LOOP_3081_12:   [xilinx-label-all-loops]
+  for(int j = 51; j >= 29; j--) {
+  ^~~
+  VITIS_LOOP_3081_12: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17770:3: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17907:4: warning: Added loop label VITIS_LOOP_3218_13:   [xilinx-label-all-loops]
+   for(int j = 51; j >= 25 + I_; j--) {
+   ^~~
+   VITIS_LOOP_3218_13: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17907:4: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17914:5: warning: Added loop label VITIS_LOOP_3225_14:   [xilinx-label-all-loops]
+    for(int j = 51; j>=25 + I_; j--) {
+    ^~~
+    VITIS_LOOP_3225_14: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17914:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17918:5: warning: Added loop label VITIS_LOOP_3229_15:   [xilinx-label-all-loops]
+    for(int j = 24 + I_; j >= 0; j--) {
+    ^~~
+    VITIS_LOOP_3229_15: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17918:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17933:3: warning: Added loop label VITIS_LOOP_3244_16:   [xilinx-label-all-loops]
+  for(int j = 63; j >= 36; j--) {
+  ^~~
+  VITIS_LOOP_3244_16: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:17933:3: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:18093:4: warning: Added loop label VITIS_LOOP_3404_17:   [xilinx-label-all-loops]
+   for(int j = 63; j >= 31 + I_; j--) {
+   ^~~
+   VITIS_LOOP_3404_17: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:18093:4: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:18100:5: warning: Added loop label VITIS_LOOP_3411_18:   [xilinx-label-all-loops]
+    for(int j = 63; j >= 31 + I_; j--) {
+    ^~~
+    VITIS_LOOP_3411_18: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:18100:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:18104:5: warning: Added loop label VITIS_LOOP_3415_19:   [xilinx-label-all-loops]
+    for(int j = 30 + I_; j >= 0; j--) {
+    ^~~
+    VITIS_LOOP_3415_19: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:18104:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:18819:13: warning: Added loop label VITIS_LOOP_703_1:   [xilinx-label-all-loops]
+            for (b_exp = I_-1; b_exp >= -F_; b_exp--) {
+            ^~~
+            VITIS_LOOP_703_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:18819:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:19037:13: warning: Added loop label VITIS_LOOP_921_1:   [xilinx-label-all-loops]
+            for (b_exp = I_-1; b_exp >= -F_; b_exp--) {
+            ^~~
+            VITIS_LOOP_921_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:19037:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:19454:13: warning: Added loop label VITIS_LOOP_1345_1:   [xilinx-label-all-loops]
+            for (b_exp = I_-1; b_exp >= -F_; b_exp--) {
+            ^~~
+            VITIS_LOOP_1345_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:19454:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:19774:9: warning: Added loop label VITIS_LOOP_240_1:   [xilinx-label-all-loops]
+        for ( int pos = msbr-1; pos >= 0; pos-- ) {
+        ^~~
+        VITIS_LOOP_240_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:19774:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:19802:9: warning: Added loop label VITIS_LOOP_268_2:   [xilinx-label-all-loops]
+        for ( int pos = -1; pos >= -F_-1; pos-- ) {
+        ^~~
+        VITIS_LOOP_268_2: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:19802:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20504:13: warning: Added loop label VITIS_LOOP_48_1:   [xilinx-label-all-loops]
+            for (int j = 0; j < W_-1; j++){
+            ^~~
+            VITIS_LOOP_48_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20504:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20557:5: warning: Added loop label VITIS_LOOP_109_2:   [xilinx-label-all-loops]
+    for (int j = F_l+F_+I_m-1; j < F_l+W_+5; j++){
+    ^~~
+    VITIS_LOOP_109_2: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20557:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20571:13: warning: Added loop label VITIS_LOOP_123_3:   [xilinx-label-all-loops]
+            for (int j = WO_m-1; j >= W_-1; j--) {
+            ^~~
+            VITIS_LOOP_123_3: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20571:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20601:13: warning: Added loop label VITIS_LOOP_153_4:   [xilinx-label-all-loops]
+            for (int j = W_-2; j >= 0; j--){
+            ^~~
+            VITIS_LOOP_153_4: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20601:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20686:12: warning: Added loop label VITIS_LOOP_281_1:   [xilinx-label-all-loops]
+           for(int i = wf_log+we_log-2; i > WI_e - 2; --i) {
+           ^~~
+           VITIS_LOOP_281_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20686:12: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20706:16: warning: Added loop label VITIS_LOOP_301_2:   [xilinx-label-all-loops]
+               for (int j = WO_e-1; j >= W_-1; j--) {
+               ^~~
+               VITIS_LOOP_301_2: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20706:16: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20720:20: warning: Added loop label VITIS_LOOP_315_3:   [xilinx-label-all-loops]
+                   for(int i = 0; i < W_-1; ++i) {
+                   ^~~
+                   VITIS_LOOP_315_3: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20720:20: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20813:12: warning: Added loop label VITIS_LOOP_433_1:   [xilinx-label-all-loops]
+           for (int j =WO_d-1; j >= W_-1; j--) {
+           ^~~
+           VITIS_LOOP_433_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20813:12: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20827:15: warning: Added loop label VITIS_LOOP_447_2:   [xilinx-label-all-loops]
+              for(int i = 0; i < W_-1; ++i) {
+              ^~~
+              VITIS_LOOP_447_2: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20827:15: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20947:13: warning: Added loop label VITIS_LOOP_33_1:   [xilinx-label-all-loops]
+            for (int i = 0; i < W_-1; i++){
+            ^~~
+            VITIS_LOOP_33_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:20947:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21071:13: warning: Added loop label VITIS_LOOP_183_1:   [xilinx-label-all-loops]
+            for (int i = 0; i < W_-1; i++){
+            ^~~
+            VITIS_LOOP_183_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21071:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21126:13: warning: Added loop label VITIS_LOOP_248_1:   [xilinx-label-all-loops]
+            for (int i = 0; i < W_-1; i++){
+            ^~~
+            VITIS_LOOP_248_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21126:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21645:2: warning: Added loop label VITIS_LOOP_16_1:   [xilinx-label-all-loops]
+ for (int i=0; i<W_;i++)
+ ^~~
+ VITIS_LOOP_16_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21645:2: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21656:2: warning: Added loop label VITIS_LOOP_27_1:   [xilinx-label-all-loops]
+ for (int i=0; i<W_;i++)
+ ^~~
+ VITIS_LOOP_27_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21656:2: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21667:2: warning: Added loop label VITIS_LOOP_38_1:   [xilinx-label-all-loops]
+ for (int i=0; i<I_;i++)
+ ^~~
+ VITIS_LOOP_38_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21667:2: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21678:2: warning: Added loop label VITIS_LOOP_49_1:   [xilinx-label-all-loops]
+ for (int i=0; i<I_;i++)
+ ^~~
+ VITIS_LOOP_49_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21678:2: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21689:2: warning: Added loop label VITIS_LOOP_60_1:   [xilinx-label-all-loops]
+ for (int i=0; i<W_;i++)
+ ^~~
+ VITIS_LOOP_60_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21689:2: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21700:2: warning: Added loop label VITIS_LOOP_71_1:   [xilinx-label-all-loops]
+ for (int i=0; i<W_;i++)
+ ^~~
+ VITIS_LOOP_71_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21700:2: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21711:2: warning: Added loop label VITIS_LOOP_82_1:   [xilinx-label-all-loops]
+ for (int i=0; i<I_;i++)
+ ^~~
+ VITIS_LOOP_82_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21711:2: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21722:2: warning: Added loop label VITIS_LOOP_93_1:   [xilinx-label-all-loops]
+ for (int i=0; i<I_;i++)
+ ^~~
+ VITIS_LOOP_93_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:21722:2: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:24082:12: warning: Added loop label VITIS_LOOP_26_1:   [xilinx-label-all-loops]
+           for(int i = 0; i < W_-1; ++i) {
+           ^~~
+           VITIS_LOOP_26_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:24082:12: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:24146:7: warning: Added loop label VITIS_LOOP_40_1:   [xilinx-label-all-loops]
+      for(int pos = msbr - 1 ; pos >= -F-1; pos--) {
+      ^~~
+      VITIS_LOOP_40_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:24146:7: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:24263:9: warning: Added loop label VITIS_LOOP_49_1:   [xilinx-label-all-loops]
+        for(int pos = msbr - 1; pos >= 0; pos--) {
+        ^~~
+        VITIS_LOOP_49_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:24263:9: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:24288:5: warning: Added loop label VITIS_LOOP_81_2:   [xilinx-label-all-loops]
+    for(int pos = -1; pos >= -F-1; pos--) {
+    ^~~
+    VITIS_LOOP_81_2: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:24288:5: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:24358:8: warning: Added loop label VITIS_LOOP_169_3:   [xilinx-label-all-loops]
+       for(int i = 0; i < W - 1; ++i) {
+       ^~~
+       VITIS_LOOP_169_3: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:24358:8: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:26644:59: error: Invalid Directive: for current device, ram_1p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=local_vector_cache type=ram_1p impl=bram
+                                                          ^
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:26658:13: warning: Added loop label VITIS_LOOP_48_1:   [xilinx-label-all-loops]
+            for (int j = i; j < end_idx; j++) {
+            ^~~
+            VITIS_LOOP_48_1: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:26658:13: note: FIX-IT applied suggested code changes
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:26717:29: warning: Added loop label VITIS_LOOP_107_2:   [xilinx-label-all-loops]
+                            for (int dd = d; dd < end_d; dd++) {
+                            ^~~
+                            VITIS_LOOP_107_2: 
+D:\FPGA\fitness_function\fitness_hls\fitness_hls\hls\.autopilot\db\fitness_kernel.pp.0.cpp:26717:29: note: FIX-IT applied suggested code changes

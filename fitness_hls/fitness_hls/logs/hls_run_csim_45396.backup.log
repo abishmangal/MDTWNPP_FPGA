@@ -1,0 +1,54 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir D:/FPGA/fitness_function/fitness_hls/fitness_hls 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+WARNING: [HLS 200-2001] file not found 'fitness_function_top.cppfitness_function_top.cpp' see [hls] from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying ini 'syn.file=D:/FPGA/Fitness_A/Fitness_A/Fitness_Accelerator/fitness_kernel_hls.cpp' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding design file 'D:/FPGA/Fitness_A/Fitness_A/Fitness_Accelerator/fitness_kernel_hls.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=fitness_function_top.cppfitness_function_top.cpp' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(10)
+WARNING: [HLS 200-40] Cannot find design file 'fitness_function_top.cppfitness_function_top.cpp'
+INFO: [HLS 200-1465] Applying ini 'syn.file=fitness_kernel_top.cpp' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding design file 'D:/FPGA/fitness_function/fitness_hls/fitness_kernel_top.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=fitness_kernel.h' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(12)
+INFO: [HLS 200-10] Adding design file 'D:/FPGA/fitness_function/fitness_hls/fitness_kernel.h' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=D:/FPGA/Fitness_A/Fitness_A/Fitness_Accelerator/tb_fitness.cpp' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding test bench file 'D:/FPGA/Fitness_A/Fitness_A/Fitness_Accelerator/tb_fitness.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=fitness_kernel' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(8)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xczu7ev-ffvc1156-2-e' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(5)
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../../../Fitness_A/Fitness_A/Fitness_Accelerator/fitness_kernel_hls.cpp in debug mode
+   Generating csim.exe
+Makefile.rules:349: recipe for target 'csim.exe' failed
+In file included from ../../../../../../Fitness_A/Fitness_A/Fitness_Accelerator/fitness_kernel_hls.cpp:2:
+In file included from D:/Xilinx/Vitis/2024.2/include/ap_int.h:10:
+In file included from D:/Xilinx/Vitis/2024.2/include/etc/ap_common.h:658:
+In file included from D:/Xilinx/Vitis/2024.2/include/etc/ap_private.h:68:
+In file included from D:/Xilinx/Vitis/2024.2/include/hls_half.h:26:
+In file included from D:/Xilinx/Vitis/2024.2/include/etc/hls_half_fpo.h:19:
+In file included from D:/Xilinx/Vitis/2024.2/include/hls_fpo.h:140:
+In file included from D:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:150:
+D:/Xilinx/Vitis/2024.2/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+D:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+1 warning generated.
+ld.lld: error: undefined symbol: fitness_kernel
+>>> referenced by ../../../../../../Fitness_A/Fitness_A/Fitness_Accelerator/tb_fitness.cpp:44
+>>>               obj/tb_fitness.o:(main)
+>>> referenced by ../../../../fitness_kernel_top.cpp:39
+>>>               obj/fitness_kernel_top.o:(fitness_top)
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [csim.exe] Error 1
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+ERROR: 4
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 2 seconds. Total elapsed time: 40.568 seconds; peak allocated memory: 163.102 MB.

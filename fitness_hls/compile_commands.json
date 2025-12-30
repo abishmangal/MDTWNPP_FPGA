@@ -1,0 +1,40 @@
+[
+  {
+    "directory": "D:\\FPGA\\fitness_function\\fitness_hls",
+    "arguments": [
+      "D:\\Xilinx\\Vitis\\2024.2\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=D:\\Xilinx\\Vitis\\2024.2\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=D:\\Xilinx\\Vitis\\2024.2\\common\\technology\\autopilot",
+      "-fhlstoplevel=fitness_kernel",
+      "-c",
+      "D:\\FPGA\\fitness_function\\fitness_hls\\tb_fitness.cpp"
+    ],
+    "file": "D:\\FPGA\\fitness_function\\fitness_hls\\tb_fitness.cpp"
+  },
+  {
+    "directory": "D:\\FPGA\\fitness_function\\fitness_hls",
+    "arguments": [
+      "D:\\Xilinx\\Vitis\\2024.2\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=D:\\Xilinx\\Vitis\\2024.2\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls",
+      "-hls-syn-headers-dir=D:\\Xilinx\\Vitis\\2024.2\\common\\technology\\autopilot",
+      "-fhlstoplevel=fitness_kernel",
+      "-c",
+      "D:\\FPGA\\fitness_function\\fitness_hls\\fitness_kernel.cpp"
+    ],
+    "file": "D:\\FPGA\\fitness_function\\fitness_hls\\fitness_kernel.cpp"
+  },
+  {
+    "directory": "D:\\FPGA\\fitness_function\\fitness_hls",
+    "arguments": [
+      "D:\\Xilinx\\Vitis\\2024.2\\vcxx\\libexec\\clang++.exe",
+      "--sysroot=D:\\Xilinx\\Vitis\\2024.2\\tps\\mingw\\10.0.0\\win64.o\\nt",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=D:\\Xilinx\\Vitis\\2024.2\\include",
+      "-c",
+      "D:/FPGA/Fitness_A/Fitness_A/Fitness_Accelerator/tb_fitness.cpp"
+    ],
+    "file": "D:/FPGA/Fitness_A/Fitness_A/Fitness_Accelerator/tb_fitness.cpp"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "name": "fitness_hls",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": [
+      "hls_config.cfg"
+    ],
+    "work_dir": "fitness_hls"
+  },
+  "template": "empty_hls_component"
+}

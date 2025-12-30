@@ -1,0 +1,11 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../../../Fitness_A/Fitness_A/Fitness_Accelerator/tb_fitness.cpp in debug mode
+   Compiling ../../../../../../Fitness_A/Fitness_A/Fitness_Accelerator/fitness_kernel_hls.cpp in debug mode
+   Generating csim.exe
+HW: 2.7
+SW: 2.7
+TEST PASSED
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 5
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

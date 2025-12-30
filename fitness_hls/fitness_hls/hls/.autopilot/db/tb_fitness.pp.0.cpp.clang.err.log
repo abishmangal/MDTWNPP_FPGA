@@ -1,0 +1,4 @@
+tb_fitness.cpp:44:9: warning: unused parameter 'batch_idx' [-Wunused-parameter]
+    int batch_idx
+        ^
+1 warning generated.

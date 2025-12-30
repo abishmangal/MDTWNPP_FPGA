@@ -1,0 +1,133 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir D:/FPGA/fitness_function/fitness_hls/fitness_hls 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=D:\FPGA\fitness_function\fitness_hls\fitness_kernel.cpp' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding design file 'D:/FPGA/fitness_function/fitness_hls/fitness_kernel.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=tb_fitness.cpp' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(10)
+INFO: [HLS 200-10] Adding design file 'D:/FPGA/fitness_function/fitness_hls/tb_fitness.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=D:\FPGA\fitness_function\fitness_hls\fitness_kernel.h' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding design file 'D:/FPGA/fitness_function/fitness_hls/fitness_kernel.h' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=D:/FPGA/Fitness_A/Fitness_A/Fitness_Accelerator/tb_fitness.cpp' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding test bench file 'D:/FPGA/Fitness_A/Fitness_A/Fitness_Accelerator/tb_fitness.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=fitness_kernel' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(8)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xczu7ev-ffvc1156-2-e' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(5)
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 4 seconds. CPU system time: 2 seconds. Elapsed time: 5.973 seconds; current allocated memory: 162.305 MB.
+INFO: [HLS 200-10] Analyzing design file 'tb_fitness.cpp' ... 
+WARNING: [HLS 207-5292] unused parameter 'batch_idx' (tb_fitness.cpp:44:9)
+INFO: [HLS 200-10] Analyzing design file 'fitness_kernel.cpp' ... 
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables (fitness_kernel.cpp:32:15)
+Resolution: For help on HLS 214-111 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-111.html
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (fitness_kernel.cpp:29:9)
+Resolution: For help on HLS 214-114 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-114.html
+WARNING: [HLS 200-471] Dataflow form checks found 2 issue(s) in file fitness_kernel.cpp
+Resolution: For help on HLS 200-471 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-471.html
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 70.16 seconds; current allocated memory: 169.164 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 228 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,676 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,382 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,453 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,453 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 23,604 instructions in the design after the 'Array/Struct' phase of compilation. See the Design Size Report for more details: D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 44,751 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 44,751 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 44,751 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 58,036 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 58,036 instructions in the design after the 'Performance' phase of compilation. See the Design Size Report for more details: D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 44,836 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 44,767 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 44,767 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 44,783 instructions in the design after the 'HW Transforms' phase of compilation. See the Design Size Report for more details: D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 38,324 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_48_1' is marked as complete unroll implied by the pipeline pragma (fitness_kernel.cpp:48:30)
+INFO: [HLS 214-291] Loop 'process_bits' is marked as complete unroll implied by the pipeline pragma (fitness_kernel.cpp:86:31)
+INFO: [HLS 214-291] Loop 'accumulate' is marked as complete unroll implied by the pipeline pragma (fitness_kernel.cpp:97:37)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_107_2' is marked as complete unroll implied by the pipeline pragma (fitness_kernel.cpp:107:47)
+INFO: [HLS 214-186] Unrolling loop 'process_bits' (fitness_kernel.cpp:86:31) in function 'fitness_kernel' completely with a factor of 32 (fitness_kernel.cpp:18:0)
+INFO: [HLS 214-188] Unrolling loop 'compute_distance' (fitness_kernel.cpp:125:31) in function 'fitness_kernel' partially with a factor of 5 (fitness_kernel.cpp:18:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ14fitness_kernelE18local_vector_cache': Cyclic partitioning with factor 10 on dimension 1. (fitness_kernel.cpp:32:0)
+INFO: [HLS 214-248] Applying array_partition to 'sumA': Complete partitioning on dimension 1. (fitness_kernel.cpp:63:8)
+INFO: [HLS 214-248] Applying array_partition to 'sumB': Complete partitioning on dimension 1. (fitness_kernel.cpp:64:19)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< init_sums> at fitness_kernel.cpp:69:13 
+INFO: [HLS 214-115] Multiple burst reads of variable length and bit width 32 in loop 'VITIS_LOOP_48_1'(fitness_kernel.cpp:48:30) has been inferred on bundle 'gmem_vec'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (fitness_kernel.cpp:48:30)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_48_1' (fitness_kernel.cpp:48:30) in function 'Block_entry_proc' as it has a variable trip count (fitness_kernel.cpp:48:30)
+WARNING: [HLS 214-187] Cannot unroll loop 'init_sums' (fitness_kernel.cpp:69:13) in function 'Block_entry_proc' as it has a variable trip count (fitness_kernel.cpp:69:13)
+WARNING: [HLS 214-187] Cannot unroll loop 'accumulate' (fitness_kernel.cpp:97:37) in function 'Block_entry_proc' as it has a variable trip count (fitness_kernel.cpp:97:37)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_107_2' (fitness_kernel.cpp:107:47) in function 'Block_entry_proc' as it has a variable trip count (fitness_kernel.cpp:107:47)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 166.092 seconds; current allocated memory: 171.805 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.006 seconds; current allocated memory: 171.828 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 47 seconds. CPU system time: 0 seconds. Elapsed time: 49.835 seconds; current allocated memory: 258.398 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 28 seconds. CPU system time: 0 seconds. Elapsed time: 28.607 seconds; current allocated memory: 343.781 MB.
+INFO: [XFORM 203-712] Applying dataflow to function 'fitness_kernel' (fitness_kernel.cpp:10:1), detected/extracted 1 process function(s): 
+	 'Block_entry_proc'.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 333 seconds. CPU system time: 2 seconds. Elapsed time: 341.574 seconds; current allocated memory: 661.023 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 701 seconds. CPU system time: 6 seconds. Elapsed time: 729.955 seconds; current allocated memory: 1.768 GB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'fitness_kernel' ...
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_entry_proc_Pipeline_init_sums' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'init_sums'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'init_sums'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 19 seconds. CPU system time: 0 seconds. Elapsed time: 25.774 seconds; current allocated memory: 1.787 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.947 seconds; current allocated memory: 1.816 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_entry_proc_Pipeline_compute_distance' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'compute_distance'.
+WARNING: [HLS 200-880] The II Violation in module 'Block_entry_proc_Pipeline_compute_distance' (loop 'compute_distance'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation 0 bit ('distance_squared_write_ln123', fitness_kernel.cpp:123) of variable 'distance_squared', fitness_kernel.cpp:130 on local variable 'distance_squared', fitness_kernel.cpp:123 and 'load' operation 32 bit ('distance_squared', fitness_kernel.cpp:130) on local variable 'distance_squared', fitness_kernel.cpp:123.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'Block_entry_proc_Pipeline_compute_distance' (loop 'compute_distance'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation 0 bit ('distance_squared_write_ln123', fitness_kernel.cpp:123) of variable 'distance_squared', fitness_kernel.cpp:130 on local variable 'distance_squared', fitness_kernel.cpp:123 and 'load' operation 32 bit ('distance_squared', fitness_kernel.cpp:130) on local variable 'distance_squared', fitness_kernel.cpp:123.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'Block_entry_proc_Pipeline_compute_distance' (loop 'compute_distance'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation 0 bit ('distance_squared_write_ln123', fitness_kernel.cpp:123) of variable 'distance_squared', fitness_kernel.cpp:130 on local variable 'distance_squared', fitness_kernel.cpp:123 and 'load' operation 32 bit ('distance_squared', fitness_kernel.cpp:130) on local variable 'distance_squared', fitness_kernel.cpp:123.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'Block_entry_proc_Pipeline_compute_distance' (loop 'compute_distance'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation 0 bit ('distance_squared_write_ln123', fitness_kernel.cpp:123) of variable 'distance_squared', fitness_kernel.cpp:130 on local variable 'distance_squared', fitness_kernel.cpp:123 and 'load' operation 32 bit ('distance_squared', fitness_kernel.cpp:130) on local variable 'distance_squared', fitness_kernel.cpp:123.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'Block_entry_proc_Pipeline_compute_distance' (loop 'compute_distance'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 0) between 'store' operation 0 bit ('distance_squared_write_ln123', fitness_kernel.cpp:123) of variable 'distance_squared', fitness_kernel.cpp:130 on local variable 'distance_squared', fitness_kernel.cpp:123 and 'load' operation 32 bit ('distance_squared', fitness_kernel.cpp:130) on local variable 'distance_squared', fitness_kernel.cpp:123.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'Block_entry_proc_Pipeline_compute_distance' (loop 'compute_distance'): Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 0) between 'store' operation 0 bit ('distance_squared_write_ln123', fitness_kernel.cpp:123) of variable 'distance_squared', fitness_kernel.cpp:130 on local variable 'distance_squared', fitness_kernel.cpp:123 and 'load' operation 32 bit ('distance_squared', fitness_kernel.cpp:130) on local variable 'distance_squared', fitness_kernel.cpp:123.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'Block_entry_proc_Pipeline_compute_distance' (loop 'compute_distance'): Unable to enforce a carried dependence constraint (II = 14, distance = 1, offset = 0) between 'store' operation 0 bit ('distance_squared_write_ln123', fitness_kernel.cpp:123) of variable 'distance_squared', fitness_kernel.cpp:130 on local variable 'distance_squared', fitness_kernel.cpp:123 and 'load' operation 32 bit ('distance_squared', fitness_kernel.cpp:130) on local variable 'distance_squared', fitness_kernel.cpp:123.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 15, Depth = 23, loop 'compute_distance'
+WARNING: [HLS 200-871] Estimated clock period (12.874 ns) exceeds the target (target clock period: 10.000 ns, clock uncertainty: 2.700 ns, effective delay budget: 7.300 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'Block_entry_proc_Pipeline_compute_distance' consists of the following:
+	'fadd' operation 32 bit ('distance_squared', fitness_kernel.cpp:130) [423]  (6.437 ns)
+	'fadd' operation 32 bit ('distance_squared', fitness_kernel.cpp:130) [433]  (6.437 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.802 seconds; current allocated memory: 1.816 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.364 seconds; current allocated memory: 1.816 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_entry_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for loop 'process_chunks': contains subloop(s) that are not unrolled or flattened.
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for loop 'load_cache': contains subloop(s) that are not unrolled or flattened.
+ERROR: [HLS 200-103] Unexpected exception occurred: Out of Memory.
+ERROR: Synthesis failed.
+INFO: [HLS 200-112] Total CPU user time: 2599 seconds. Total CPU system time: 38 seconds. Total elapsed time: 2951.53 seconds; peak allocated memory: 2.491 GB.

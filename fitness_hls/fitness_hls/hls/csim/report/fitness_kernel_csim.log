@@ -1,0 +1,45 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+make: 'csim.exe' is up to date.
+========================================
+   Fitness Kernel Testbench
+========================================
+
+Parameters:
+  chromo_len: 100
+  dim: 10
+  num_bats: 3
+  num_chunks: 4
+
+Initializing vectors...
+
+[TEST 1] Loading cache (mode=1)...
+  Cache loading completed. Signal: 0
+
+[TEST 2] Computing fitness (mode=0)...
+  Writing chromosome data to stream...
+
+[VERIFICATION] Comparing results...
+  Batch 0:
+    HW result: 33191.6
+    CPU result: 33191.6
+    Difference: 0  [OK]
+  Batch 1:
+    HW result: 26707.1
+    CPU result: 26707.1
+    Difference: 0.00195312  [ERROR: Mismatch!]
+  Batch 2:
+    HW result: 39033.9
+    CPU result: 39033.9
+    Difference: 0  [OK]
+
+========================================
+   Test Summary
+========================================
+Results received: 3/3
+Errors: 1
+
+FAILURE: 1 test(s) failed!
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 12
+ERR: [SIM 100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 3] *************** CSIM finish ***************

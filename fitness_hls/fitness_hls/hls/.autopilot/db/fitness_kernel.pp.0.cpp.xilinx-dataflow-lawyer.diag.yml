@@ -1,0 +1,12 @@
+---
+MainSourceFile:  'D:/FPGA/fitness_function/fitness_hls/fitness_hls/hls/.autopilot/db/fitness_kernel.pp.0.cpp'
+Diagnostics:     
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-8] Static scalars and arrays declared inside a dataflow region will be treated like local variables'
+    FileOffset:      '32:15'
+    FilePath:        fitness_kernel.cpp
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-11] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region'
+    FileOffset:      '29:9'
+    FilePath:        fitness_kernel.cpp
+...

@@ -1,0 +1,70 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir D:/FPGA/fitness_function/fitness_hls/fitness_hls 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=D:\FPGA\fitness_function\fitness_hls\fitness_kernel.cpp' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding design file 'D:/FPGA/fitness_function/fitness_hls/fitness_kernel.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=tb_fitness.cpp' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(10)
+INFO: [HLS 200-10] Adding design file 'D:/FPGA/fitness_function/fitness_hls/tb_fitness.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=D:\FPGA\fitness_function\fitness_hls\fitness_kernel.h' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding design file 'D:/FPGA/fitness_function/fitness_hls/fitness_kernel.h' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=D:/FPGA/Fitness_A/Fitness_A/Fitness_Accelerator/tb_fitness.cpp' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding test bench file 'D:/FPGA/Fitness_A/Fitness_A/Fitness_Accelerator/tb_fitness.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=fitness_kernel' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(8)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xczu7ev-ffvc1156-2-e' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xczu7ev-ffvc1156-2-e'
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from D:/FPGA/fitness_function/fitness_hls/hls_config.cfg(5)
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+make: 'csim.exe' is up to date.
+csim.mk:94: warning: overriding recipe for target 'obj/tb_fitness.o'
+csim.mk:88: warning: ignoring old recipe for target 'obj/tb_fitness.o'
+========================================
+   Fitness Kernel Testbench
+========================================
+
+Parameters:
+  chromo_len: 100
+  dim: 10
+  num_bats: 3
+  num_chunks: 4
+
+Initializing vectors...
+
+[TEST 1] Loading cache (mode=1)...
+  Cache loading completed. Signal: 0
+
+[TEST 2] Computing fitness (mode=0)...
+  Writing chromosome data to stream...
+
+[VERIFICATION] Comparing results...
+  Batch 0:
+    HW result: 33191.6
+    CPU result: 33191.6
+    Difference: 0  [OK]
+  Batch 1:
+    HW result: 26707.1
+    CPU result: 26707.1
+    Difference: 0.00195312  [ERROR: Mismatch!]
+  Batch 2:
+    HW result: 39033.9
+    CPU result: 39033.9
+    Difference: 0  [OK]
+
+========================================
+   Test Summary
+========================================
+Results received: 3/3
+Errors: 1
+
+FAILURE: 1 test(s) failed!
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 12
+@E Simulation failed: Function 'main' returns nonzero value '1'.
+ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+ERROR: 4
+INFO: [HLS 200-112] Total CPU user time: 6 seconds. Total CPU system time: 3 seconds. Total elapsed time: 30.564 seconds; peak allocated memory: 163.199 MB.

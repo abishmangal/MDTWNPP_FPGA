@@ -1,0 +1,158 @@
+<ENTRY>
+{
+ "thisFile": "D:/FPGA\\fitness_function\\fitness_hls\\fitness_hls\\fitness_hls.hlsrun_package_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "12/16/25 17:44:32",
+ "timestampMillis": "1765887272309",
+ "buildStep": {
+  "cmdId": "80670464-9adb-4b7e-a4d6-c0ba62656480",
+  "name": "vitis-run",
+  "logFile": "D:/FPGA\\fitness_function\\fitness_hls\\fitness_hls\\logs\\fitness_hls.steps.log",
+  "commandLine": "D:/Xilinx/Vitis/2024.2/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --package --config D:\\FPGA\\fitness_function\\fitness_hls\\hls_config.cfg --work_dir fitness_hls ",
+  "args": [
+   "--mode",
+   "hls",
+   "--package",
+   "--config",
+   "D:\\FPGA\\fitness_function\\fitness_hls\\hls_config.cfg",
+   "--work_dir",
+   "fitness_hls"
+  ],
+  "iniFiles": [],
+  "cwd": "D:\\FPGA\\fitness_function\\fitness_hls"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/16/25 17:44:32",
+ "timestampMillis": "1765887272310",
+ "status": {
+  "cmdId": "80670464-9adb-4b7e-a4d6-c0ba62656480",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "12/16/25 17:44:47",
+ "timestampMillis": "1765887287943",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_IP",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "fitness_kernel",
+     "file": "D:/FPGA\\fitness_function\\fitness_hls\\fitness_hls\\fitness_kernel.zip",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "D:/FPGA\\Fitness_A\\Fitness_A\\Fitness_Accelerator\\fitness_kernel_hls.cpp",
+     "D:/FPGA\\fitness_function\\fitness_hls\\fitness_function_top.cppfitness_function_top.cpp",
+     "D:/FPGA\\fitness_function\\fitness_hls\\fitness_kernel_top.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "12/16/25 17:44:47",
+ "timestampMillis": "1765887287972",
+ "buildStep": {
+  "cmdId": "445807f9-48af-4fa1-9c26-0275c38b6f53",
+  "name": "",
+  "logFile": "D:/FPGA\\fitness_function\\fitness_hls\\fitness_hls\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "D:\\FPGA\\fitness_function\\fitness_hls"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/16/25 17:44:47",
+ "timestampMillis": "1765887287973",
+ "status": {
+  "cmdId": "445807f9-48af-4fa1-9c26-0275c38b6f53",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/16/25 17:45:55",
+ "timestampMillis": "1765887355331",
+ "status": {
+  "cmdId": "445807f9-48af-4fa1-9c26-0275c38b6f53",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "12/16/25 17:45:56",
+ "timestampMillis": "1765887356787",
+ "status": {
+  "cmdId": "80670464-9adb-4b7e-a4d6-c0ba62656480",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/16/25 17:45:56",
+ "timestampMillis": "1765887356856",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "12/16/25 17:45:56",
+ "timestampMillis": "1765887356860",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
