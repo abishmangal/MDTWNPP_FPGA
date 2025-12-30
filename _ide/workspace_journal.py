@@ -7,3 +7,9 @@ client.set_workspace(path="fitness_function")
 comp = client.get_component(name="fitness_hls")
 comp.run(operation="C_SIMULATION")
 
+comp.run(operation="C_SIMULATION")
+
+comp.run(operation="C_SIMULATION")
+
+comp.run(operation="C_SIMULATION")
+

@@ -43,7 +43,7 @@ void fitness_kernel(
         result_stream.write(0.0f);
     } 
     // --- MODE 0: COMPUTE FITNESS ---
-    else {g
+    else {
         // Fixed arrays with cyclic partitioning
         float sumA[MAX_DIM];
         float sumB[MAX_DIM];
@@ -94,9 +94,13 @@ void fitness_kernel(
                         float vector_val = local_vector_cache[vector_base + d];
                         
                         if (gene_bit == 0) {
-                            sumA[d] += vector_val;
+                            // Use standard floating-point addition
+                            float temp_sum = sumA[d];
+                            sumA[d] = temp_sum + vector_val;
                         } else {
-                            sumB[d] += vector_val;
+                            // Use standard floating-point addition
+                            float temp_sum = sumB[d];
+                            sumB[d] = temp_sum + vector_val;
                         }
                     }
                 }
@@ -120,14 +124,18 @@ void fitness_kernel(
             compute_groups: for (int d = 0; d < dim; d++) {
                 #pragma HLS PIPELINE II=1
                 int group_idx = d % REDUCTION_GROUPS;  // Distribute across groups
+                // Use standard floating-point subtraction and multiplication
                 float diff = sumA[d] - sumB[d];
-                group_sums[group_idx] += diff * diff;
+                float square = diff * diff;
+                float temp_sum = group_sums[group_idx];
+                group_sums[group_idx] = temp_sum + square;
             }
             
             // Accumulate groups - small enough to unroll
             accumulate_groups: for (int g = 0; g < REDUCTION_GROUPS; g++) {
                 #pragma HLS UNROLL
-                distance_squared += group_sums[g];
+                float temp_distance = distance_squared;
+                distance_squared = temp_distance + group_sums[g];
             }
             
             // Alternative: If REDUCTION_GROUPS is too large, use this instead:

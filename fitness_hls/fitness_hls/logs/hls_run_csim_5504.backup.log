@@ -20,27 +20,11 @@ INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from D:/FPG
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
 INFO: [HLS 200-2036] Building debug C Simulation binaries
-   Compiling ../../../../tb_fitness.cpp in debug mode
-   Generating csim.exe
+make: 'csim.exe' is up to date.
 csim.mk:94: warning: overriding recipe for target 'obj/tb_fitness.o'
 csim.mk:88: warning: ignoring old recipe for target 'obj/tb_fitness.o'
-In file included from ../../../../tb_fitness.cpp:8:
-In file included from D:/Xilinx/Vitis/2024.2/include/ap_int.h:10:
-In file included from D:/Xilinx/Vitis/2024.2/include/etc/ap_common.h:658:
-In file included from D:/Xilinx/Vitis/2024.2/include/etc/ap_private.h:68:
-In file included from D:/Xilinx/Vitis/2024.2/include/hls_half.h:26:
-In file included from D:/Xilinx/Vitis/2024.2/include/etc/hls_half_fpo.h:19:
-In file included from D:/Xilinx/Vitis/2024.2/include/hls_fpo.h:140:
-In file included from D:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:150:
-D:/Xilinx/Vitis/2024.2/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
-#define __GMP_LIBGMP_DLL  0
-        ^
-D:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
-#define __GMP_LIBGMP_DLL 1
-        ^
-1 warning generated.
 ========================================
-   Fitness Kernel Testbench (Updated)
+   Fitness Kernel Testbench
 ========================================
 
 Parameters:
@@ -59,46 +43,28 @@ Initializing vectors...
 
 [VERIFICATION] Comparing results...
   Batch 0:
-    HW result:  33191.6
+    HW result: 33191.6
     CPU result: 33191.6
-    Difference: 0.00390625
-    Rel error:  1.17688e-05%
-    Error type: Power of 2 rounding (2^-8)
-    [OK]
+    Difference: 0  [OK]
   Batch 1:
-    HW result:  26707.1
+    HW result: 26707.1
     CPU result: 26707.1
-    Difference: 0.00195312
-    Rel error:  7.31314e-06%
-    Error type: Power of 2 rounding (2^-9)
-    [OK]
+    Difference: 0.00195312  [ERROR: Mismatch!]
   Batch 2:
-    HW result:  39033.9
+    HW result: 39033.9
     CPU result: 39033.9
-    Difference: 0.0078125
-    Rel error:  2.00147e-05%
-    Error type: Power of 2 rounding (2^-7)
-    [OK]
+    Difference: 0  [OK]
 
 ========================================
    Test Summary
 ========================================
 Results received: 3/3
-Max absolute error: 0.0078125
-Max relative error: 2.00147e-05%
-Significant errors: 0
+Errors: 1
 
-Note on floating-point differences:
-- HLS and CPU may have small numerical differences due to:
-  1. Different rounding modes
-  2. Operation reordering for optimization
-  3. Different accumulator precision
-- Differences < 0.01% are typically acceptable for optimization
-- Your current error of 0.00195312 = 2^-9 is a common rounding pattern
-
-SUCCESS: All tests passed within acceptable tolerance!
+FAILURE: 1 test(s) failed!
 INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 12
-INFO: [SIM 211-1] CSim done with 0 errors.
+@E Simulation failed: Function 'main' returns nonzero value '1'.
+ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 2 seconds. Total elapsed time: 26.509 seconds; peak allocated memory: 162.828 MB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 36s
+ERROR: 4
+INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 2 seconds. Total elapsed time: 9.591 seconds; peak allocated memory: 162.812 MB.
